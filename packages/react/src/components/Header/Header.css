@@ -1,0 +1,9 @@
+
+.root {
+  color: orangeRed;
+  background-color: var(--color-gray);
+}
+
+.title {
+  margin: 0;
+}
