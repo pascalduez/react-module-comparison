@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header> should render the default markup and classes [snapshot] 1`] = `
+<header
+  role="banner"
+>
+  <h1>
+    test
+  </h1>
+</header>
+`;

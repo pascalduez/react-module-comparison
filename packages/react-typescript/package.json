@@ -1,0 +1,98 @@
+{
+  "name": "react-ts-module-boilerplate",
+  "version": "0.1.0",
+  "description": "Sample React presentational components package.",
+  "keywords": [
+    "react",
+    "component",
+    "boilerplate",
+    "ui",
+    "system",
+    "css-modules",
+    "styleguide",
+    "snapshot"
+  ],
+  "author": {
+    "name": "Pascal Duez",
+    "url": "https://github.com/pascalduez"
+  },
+  "homepage": "https://github.com/pascalduez/react-ts-module-boilerplate",
+  "bugs": "https://github.com/pascalduez/react-ts-module-boilerplate/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pascalduez/react-ts-module-boilerplate.git"
+  },
+  "license": "Unlicense",
+  "files": [
+    "dist",
+    "index.js",
+    "README.md",
+    "UNLICENSE"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "lint:css": "stylelint src/**/*.css",
+    "lint:js": "echo 'pass'",
+    "lint": "run-s lint:*",
+    "typecheck": "echo 'pass'",
+    "validate": "run-s lint typecheck",
+    "test": "jest",
+    "test:cover": "run-s 'test -- --coverage'",
+    "test:ci": "run-s validate 'test -- --runInBand --no-watchman --coverage'",
+    "styleguide": "start-storybook --dont-track -p 9001 -c .storybook",
+    "clean": "rm -rf dist/",
+    "build:js": "tsc --pretty",
+    "build:css": "cat dist/stylesheets/local/*.css >> dist/stylesheets/local.css",
+    "build": "run-s clean build:*",
+    "prepublish": "run-s validate test:cover build"
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.(ts|tsx|js)",
+      "!src/**/index.js",
+      "!src/**/*.story.tsx"
+    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "testMatch": ["**/*.spec.(ts|tsx|js)"],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "./scripts/preprocessor.js"
+    },
+    "setupTestFrameworkScriptFile": "./scripts/setupTests.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.4.0",
+    "@kadira/storybook": "^2.35.2",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addons": "^1.6.1",
+    "@types/classnames": "^0.0.32",
+    "@types/jest": "^19.2.2",
+    "@types/react": "^15.0.21",
+    "@types/react-dom": "^0.14.23",
+    "autoprefixer": "^6.7.7",
+    "ci-info": "^1.0.0",
+    "classnames": "^2.2.5",
+    "enzyme": "^2.8.2",
+    "jasmine-reporters": "^2.2.1",
+    "jest": "^19.0.2",
+    "jest-enzyme": "^3.0.1",
+    "npm-run-all": "^4.0.2",
+    "postcss-custom-properties": "^5.0.2",
+    "postcss-loader": "^1.3.3",
+    "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
+    "stylelint": "^7.10.1",
+    "stylelint-config-css-modules": "^0.1.0",
+    "stylelint-config-standard": "^16.0.0",
+    "typescript": "^2.2.2"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.3.2"
+  }
+}
