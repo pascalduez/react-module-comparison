@@ -1,0 +1,108 @@
+{
+  "name": "react-module-boilerplate",
+  "version": "0.1.0",
+  "description": "Sample React presentational components package",
+  "keywords": [
+    "react",
+    "component",
+    "boilerplate",
+    "ui",
+    "system",
+    "css-modules",
+    "styleguide",
+    "snapshot"
+  ],
+  "author": {
+    "name": "Pascal Duez",
+    "url": "https://github.com/pascalduez"
+  },
+  "homepage": "https://github.com/pascalduez/react-module-boilerplate",
+  "bugs": "https://github.com/pascalduez/react-module-boilerplate/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pascalduez/react-module-boilerplate.git"
+  },
+  "license": "Unlicense",
+  "files": [
+    "dist",
+    "index.js",
+    "README.md",
+    "UNLICENSE"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "lint:css": "stylelint src/**/*.css",
+    "lint:js": "eslint src/",
+    "lint": "run-s lint:*",
+    "typecheck": "flow check src/",
+    "typecheck:coverage": "flow-coverage-report -t text -t html -i 'src/**/*.js' -x 'src/**/*.{spec,story}.js'",
+    "validate": "run-s lint typecheck",
+    "test": "BABEL_ENV=RELEASE jest",
+    "test:cover": "run-s 'test -- --coverage'",
+    "test:ci": "run-s validate 'test -- --runInBand --no-watchman --coverage'",
+    "styleguide": "start-storybook --dont-track -p 9001 -c .storybook",
+    "clean": "rm -rf dist/",
+    "build:js": "BABEL_ENV=RELEASE babel src/ -d dist/ --ignore '*.spec.js,*.story.js'",
+    "build:css": "cat dist/stylesheets/local/*.css >> dist/stylesheets/local.css",
+    "build:flow": "flow-copy-source -v -i '**/*.{story,spec}.js' src/ dist/",
+    "build": "run-s clean build:*",
+    "prepublish": "run-s validate test:cover build"
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/index.js",
+      "!src/**/*.story.js"
+    ],
+    "setupTestFrameworkScriptFile": "./scripts/setupTests.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.4.0",
+    "@kadira/storybook": "^2.35.2",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addons": "^1.6.1",
+    "autoprefixer": "^6.7.7",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-plugin-css-modules-transform": "^1.2.7",
+    "babel-plugin-transform-do-expressions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "ci-info": "^1.0.0",
+    "classnames": "^2.2.5",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-css-modules": "^2.7.1",
+    "eslint-plugin-flowtype": "^2.30.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "flow-bin": "^0.44.0",
+    "flow-copy-source": "^1.1.0",
+    "flow-coverage-report": "^0.3.0",
+    "jasmine-reporters": "^2.2.1",
+    "jest": "^19.0.2",
+    "jest-enzyme": "^3.0.1",
+    "npm-run-all": "^4.0.2",
+    "postcss-custom-properties": "^5.0.2",
+    "postcss-loader": "^1.3.3",
+    "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
+    "stylelint": "^7.10.1",
+    "stylelint-config-css-modules": "^0.1.0",
+    "stylelint-config-standard": "^16.0.0"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.3.2"
+  }
+}
