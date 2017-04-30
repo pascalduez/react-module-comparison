@@ -1,6 +1,7 @@
-# react-ts-module-boilerplate
+# react-typescript
 
 > Sample React with Typescript presentational components package.  
+
 
 ## About
 
@@ -12,13 +13,3 @@ Strive for keeping things simple and efficient.
 ## Features
 
 [ ... ]
-
-
-## Credits
-
-* [Pascal Duez](https://github.com/pascalduez)
-
-
-## Licence
-
-react-ts-module-boilerplate is [unlicensed](http://unlicense.org/).

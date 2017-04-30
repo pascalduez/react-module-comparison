@@ -1,4 +1,4 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const join = require('path').join;
 
 const stats = {
@@ -16,7 +16,7 @@ module.exports = [
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'React module comparison',
+        title: 'React Reason',
         filename: 'index.html',
         template: './src/index.html',
       }),

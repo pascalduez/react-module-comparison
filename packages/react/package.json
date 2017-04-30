@@ -1,5 +1,5 @@
 {
-  "name": "react-module-boilerplate",
+  "name": "react",
   "version": "0.1.0",
   "description": "Sample React presentational components package",
   "keywords": [
@@ -12,16 +12,6 @@
     "styleguide",
     "snapshot"
   ],
-  "author": {
-    "name": "Pascal Duez",
-    "url": "https://github.com/pascalduez"
-  },
-  "homepage": "https://github.com/pascalduez/react-module-boilerplate",
-  "bugs": "https://github.com/pascalduez/react-module-boilerplate/issues",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pascalduez/react-module-boilerplate.git"
-  },
   "license": "Unlicense",
   "files": [
     "dist",
