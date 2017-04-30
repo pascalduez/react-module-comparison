@@ -33,6 +33,7 @@
   "scripts": {
     "lint:css": "stylelint src/**/*.css",
     "lint:js": "echo 'pass'",
+    "lint:ts": "tslint -t codeFrame 'src/**/*.{ts,tsx}'",
     "lint": "run-s lint:*",
     "typecheck": "echo 'pass'",
     "validate": "run-s lint typecheck",
@@ -41,7 +42,7 @@
     "test:ci": "run-s validate 'test -- --runInBand --no-watchman --coverage'",
     "styleguide": "start-storybook --dont-track -p 9001 -c .storybook",
     "clean": "rm -rf dist/",
-    "build:js": "tsc --pretty",
+    "build:ts": "tsc --pretty",
     "build:css": "cat dist/stylesheets/local/*.css >> dist/stylesheets/local.css",
     "build": "run-s clean build:*",
     "prepublish": "run-s validate test:cover build"
@@ -55,8 +56,14 @@
       "!src/**/index.js",
       "!src/**/*.story.tsx"
     ],
-    "moduleFileExtensions": ["ts", "tsx", "js"],
-    "testMatch": ["**/*.spec.(ts|tsx|js)"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testMatch": [
+      "**/*.spec.(ts|tsx|js)"
+    ],
     "transform": {
       "^.+\\.(ts|tsx)$": "./scripts/preprocessor.js"
     },
@@ -89,6 +96,8 @@
     "stylelint": "^7.10.1",
     "stylelint-config-css-modules": "^0.1.0",
     "stylelint-config-standard": "^16.0.0",
+    "tslint": "^5.1.0",
+    "tslint-react": "^2.6.0",
     "typescript": "^2.2.2"
   },
   "peerDependencies": {

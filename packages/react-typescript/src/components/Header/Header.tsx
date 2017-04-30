@@ -3,7 +3,7 @@ import * as React from 'react';
 
 interface Props {
   title: string;
-};
+}
 
 
 const Header = ({ title, ...extraProps }: Props) => (
