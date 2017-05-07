@@ -2088,9 +2088,9 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-reason-react@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.1.2.tgz#ec2b577873025562cfa53b9f5dd766fcb7f52f96"
+reason-react@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.1.3.tgz#680edae818ab01437de057c01fbcce6118f2fa93"
 
 regex-cache@^0.4.2:
   version "0.4.3"
@@ -2679,9 +2679,9 @@ webpack-sources@^0.2.3:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
 
-webpack@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.4.1.tgz#15a91dbe34966d8a4b99c7d656efd92a2e5a6f6a"
+webpack@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.5.1.tgz#61742f0cf8af555b87460a9cd8bba2f1e3ee2fce"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
