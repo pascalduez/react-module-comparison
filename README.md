@@ -1,3 +1,5 @@
+> :warning: **Outdated**: Most of the code samples and configs here are outdated by now
+
 # react-module-comparison
 
 > Compare different setups for building React packages.  
